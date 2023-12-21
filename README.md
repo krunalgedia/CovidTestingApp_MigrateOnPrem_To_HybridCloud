@@ -52,6 +52,7 @@ The goal of this project is to migrate a real-time web application and its datab
 * Ensure that the deployment yaml file has correct keys for S3 and SQL set up in the env of the container.
 
 * Deploy the docker container from GCR to Google Kubernetes Engine (GKE). Following are some specs of the running instance:
+  
 | ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission2/gke%20workload%20or%20deployment.png) | GKE Workload |
 |-----------------------------|------------------|
 | ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission2/gke%20service%20and%20ingress.png) | GKE Service and Ingress  |
