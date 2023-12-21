@@ -27,7 +27,7 @@ The goal of this project is to migrate a real-time web application and its datab
 
 ## Solution Architecture
 
-[image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/solution_architecture.png)
+![image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/solution_architecture.png)
 
 ## Workflow Gist
 
