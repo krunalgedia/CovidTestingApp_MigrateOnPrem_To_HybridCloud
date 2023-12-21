@@ -11,14 +11,8 @@ Migrate a Covid Testing real web application of a luxury hotel chain to a Scalab
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Data](#data)
-- [Workflow](#workflow)
-- [Results](#results)
-- [More ideas](#More-ideas)
-- [Dependencies](#dependencies)
-- [License](#license)
+- [Solution Architecture](#solution-architecture)
+- [Workflow Gist](#Workflow-Gist)
 - [Contact](#contact)
 - [References](#references)
 
@@ -30,6 +24,10 @@ The goal of this project is to migrate a real-time web application and its datab
 * Use the container orchestration tool Kubernetes to run manage and scale containers built in the previous step in Google Cloud.
 * Use RDBS Cloud SQL in Google Cloud as a DB for the web app.
 * Use the S3 AWS bucket to store, migrate, and sync the database for the web app.
+
+## Solution Architecture
+
+[image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/solution_architecture.png)
 
 ## Workflow Gist
 
@@ -62,6 +60,19 @@ The goal of this project is to migrate a real-time web application and its datab
 
 * Create a user on Cloud SQL Instance, connect to database using the user credential and migrate database to the cloud app.
 * Make a folder on AWS with testing reports corresponding to the database, and sync the S3 folder to migarte the files to the cloud app.
+* Final updated website records should look like:
+   
 ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission3/updated%20database%20with%20data%20and%20pdf%20migrated%20on%20website.png)
+
+## Contact
+
+Feel free to reach out if you have any questions, suggestions, or feedback related to this project. I'd love to hear from you!
+
+- **LinkedIn:** [Krunal Gedia](https://www.linkedin.com/in/krunal-gedia-00188899/)
+
+## References
+[1]: This project was implemented as a part of the [Intensive Cloud Computing Hands on Training] (https://app.thecloudbootcamp.com/certificates/iosdu088lz)
+
+
 
 
