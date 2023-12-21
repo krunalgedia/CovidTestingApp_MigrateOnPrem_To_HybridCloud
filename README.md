@@ -6,7 +6,7 @@ The luxury hotel chain currently faces challenges with its existing COVID testin
 
 Project Objective:
 
-Migrate a Covid Testing real web application of a luxury hotel chain to Scalable Hybrid Cloud environment.
+Migrate a Covid Testing real web application of a luxury hotel chain to a Scalable Hybrid Cloud environment.
 
 ## Table of Contents
 
@@ -24,14 +24,23 @@ Migrate a Covid Testing real web application of a luxury hotel chain to Scalable
 
 ## Project Overview
 
-The goal of this project is to migrate a real-time web application and its database to a Hybrid cloud environment of GCP and AWS. To achive this, we
-* Use IaaC tool Terraform to set-up Google cloud and AWS infrastructure.
-* Use PaaS tool Docker to deploy the web application to Google Cloud in container. 
-* Use container orchestration tool Kubernetes to run manage and scale container built in previous step in Google Cloud.
+The goal of this project is to migrate a real-time web application and its database to a Hybrid cloud environment of GCP and AWS. To achieve this, we
+* Use the IaaC tool Terraform to set up Google cloud and AWS infrastructure.
+* Use the PaaS tool Docker to deploy the web application to Google Cloud in the container. 
+* Use the container orchestration tool Kubernetes to run manage and scale containers built in the previous step in Google Cloud.
 * Use RDBS Cloud SQL in Google Cloud as a DB for the web app.
-* Use S3 AWS bucket to store, migrate and sync the database for web app.
+* Use the S3 AWS bucket to store, migrate, and sync the database for the web app.
 
-## Installation
+## Workflow Gist
+
+* Create a user on AWS with IAM Rules that allow full access to the AWS S3 bucket and keep the access Key for this user.
+* Set up the environment on GCP and AWS using [set AWS credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh) and [set GCP credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh).
+* Using Terraform, deploy
+*    <img align="left" width="200" src="https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/S3%20bucket.png" /> AWS S3 bucket with ACL set to private.
+*   <img align="left" width="200" src="https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/sql%20database%20instance.png" /> Cloud SQL database instance.
+*   <img align="left" width="200" src="https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/gke%20instance.png" /> Cloud GKE cluster on autopilot mode.
+  The final Terraform state should look like <img align="right" width="200" src="https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/CLI%20terraform%20state.png" />
+
 
 ```bash
 # Example installation command
@@ -46,6 +55,13 @@ streamlit run app.py
 The data used consists of SBB train tickets for single and extension tickets. The training set consists of just 4 SBB train tickets. All tickets are in PDF form.
 
 ## Workflow
+<img align="left" width="200" src="https://www.rd.com/wp-content/uploads/2018/02/25_Hilarious-Photos-that-Will-Get-You-Through-the-Week_280228817_Doty911.jpg" />
+
+# Headline 
+
+Some text
+
+
 0. Prepare training data by annotation using the UBIAI tool [1]. This includes drawing bounding boxes and labeling in the BIOES tagging form [2].
 1. Importing data
 2. Observing data
