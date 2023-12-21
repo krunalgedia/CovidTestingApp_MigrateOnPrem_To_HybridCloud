@@ -45,41 +45,22 @@ The goal of this project is to migrate a real-time web application and its datab
   - The final terraform status should be
     ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/CLI%20terraform%20state.png)
 
+* Configure the Cloud SQL instance and assign private IP within the default VPC.
+  
+* Build docker image of the web application can push to Google Container Registry (GCR) for deployment.
 
-```bash
-# Example installation command
-pip install -r requirements.txt
+* Ensure that the deployment yaml file has correct keys for S3 and SQL set up in the env of the container.
 
-# Run Web Application
-streamlit run app.py
-```
+* Deploy the docker container from GCR to Google Kubernetes Engine (GKE). Following are some specs of the running instance:
+| ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/gke%20workload%20or%20deployment.png) | GKE Workload |
+|-----------------------------|------------------|
+| ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission2/gke%20service%20and%20ingress.png) | GKE Service and Ingress  |
 
-## Data
+* Check the website using GKE Ingress endpoint IP
+![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission2/website%20on%20gke.png)
 
-The data used consists of SBB train tickets for single and extension tickets. The training set consists of just 4 SBB train tickets. All tickets are in PDF form.
-
-## Workflow
-<img align="left" width="200" src="https://www.rd.com/wp-content/uploads/2018/02/25_Hilarious-Photos-that-Will-Get-You-Through-the-Week_280228817_Doty911.jpg" />
-
-# Headline 
-
-Some text
+* Create a user on Cloud SQL Instance, connect to database using the user credential and migrate database to the cloud app.
+* Make a folder on AWS with testing reports corresponding to the database, and sync the S3 folder to migarte the files to the cloud app.
+![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission3/updated%20database%20with%20data%20and%20pdf%20migrated%20on%20website.png)
 
 
-0. Prepare training data by annotation using the UBIAI tool [1]. This includes drawing bounding boxes and labeling in the BIOES tagging form [2].
-1. Importing data
-2. Observing data
-3. Loading data in appropriate form.
-4. Fine-tuning LayoutML model.
-5. Preparing test set processing, including OCR of prediction documents using Pytesseract and getting the bounding box for all text in the test sample.
-6. Running predictions on the bounding boxes of Pytesseract.
-7. Update the database with relevant NER extracted from the model prediction on the annotated test sample.
-
-* notebooks/SBB_TrainTicketParser.ipynb contains the end-to-end code for Document parsing with database integration.
-* app.py contains the streamlit app code.
-
-## Results
-
-We fine-tuned using Facebook/Meta's LayoutLM (which utilizes BERT as the backbone and adds two new input embeddings: 2-D position embedding and image embedding) [3]. The model was imported from the Hugging Face library [4] with end-to-end code implemented in PyTorch. We leveraged the tokenizer provided by the library itself. For the test case, we perform the OCR using Pytesseract.
-
-With just 4 SBB train tickets we can achieve an average F1 score of 0.81.   
