@@ -33,10 +33,20 @@ The goal of this project is to migrate a real-time web application and its datab
 
 ## Workflow Gist
 
-* Create a user on AWS with IAM Rules that allow full access to the AWS S3 bucket and keep the access Key for this user.
-* Set up the environment on GCP and AWS using [set AWS credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh) and [set GCP credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh).
-* Using Terraform, deploy
-| ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/S3%20bucket.png) | AWS S3 bucket with ACL set to private |
+- Create a user on AWS with IAM Rules that allow full access to the AWS S3 bucket and keep the access Key for this user.
+- Set up the environment on GCP and AWS using [set AWS credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh) and [set GCP credentials] (https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/mission1/en/aws_set_credentials.sh).
+- Using Terraform, deploy
+  
+  - AWS S3 bucket with ACL set to private
+    [Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/S3%20bucket.png)
+    
+  - Cloud SQL database instance
+    [Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/sql%20database%20instance.png)
+
+  - Cloud GKE cluster on autopilot mode
+    [Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/gke%20instance.png)
+    
+| ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/S3%20bucket.png) |  |
 |-----------------------------|------------------|
 | ![Image](https://github.com/krunalgedia/CovidTestingApp_MigrateOnPrem_To_HybridCloud/blob/main/images_app/mission1/sql%20database%20instance.png) | Cloud SQL database instance   |
 |-----------------------------|------------------|
